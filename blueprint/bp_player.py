@@ -26,6 +26,7 @@ def player():
         player = playerjs
 
     player =  f"{player}"
-    return redirect(url_for('bp_game.index', player=player, index=i))
+    #result = game(playerjs['player'], player, i)
+    return jsonify(data=player,status='OK')
 
     
