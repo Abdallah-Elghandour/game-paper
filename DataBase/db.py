@@ -1,13 +1,12 @@
-import redis
-import json
+from elasticsearch import Elasticsearch
 
-r = redis.Redis(host="localhost", port=6379)
-# dp = r.lrange("players",0,-1)
-# a = json.loads(dp[0])
-# for i,a in enumerate(dp):
-#     dp[i] = json.loads(a)
+es = Elasticsearch("http://localhost:9200")
 
-# for i in range(len(dp)):
-#     if "mohamed" == dp[i]["name"]:
-#         print("yes")
-# r.rpush("players", json.dumps({"name":"mohamed", "win":0}))
+# mappings = {
+#         "properties": {
+#             "name": {"type": "text", "analyzer": "english"},
+#             "win": {"type": "integer"},
+#             "playing_counter": {"type": "integer"},
+#     }
+# }
+# es.indices.create(index="players", mappings=mappings)
